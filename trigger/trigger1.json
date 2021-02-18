@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline_Foreach_BlobToSQL",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/csv/blobs/training/AZ_DailyStoreReturn",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/b6d73f5d-f6f5-483c-ad72-08548a1823f8/resourceGroups/pxmart-storage/providers/Microsoft.Storage/storageAccounts/pxmartstorage",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
